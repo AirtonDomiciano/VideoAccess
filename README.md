@@ -1,4 +1,4 @@
-🎓 Aluai Academy
+🎓 Video Access
 
 Uma plataforma simples para disponibilizar cursos online.
 
