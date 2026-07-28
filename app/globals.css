@@ -1,26 +1,111 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+
+  --va-bg-primary: #faf7f2;
+  --va-bg-secondary: #f7f0e6;
+  --va-bg-tertiary: #f8f0e6;
+  --va-bg-white: #ffffff;
+
+  --va-surface-sand: #c8b89a;
+  --va-surface-tan: #ded2c1;
+  --va-surface-light-tan: #eadfd5;
+  --va-surface-warm: #f5ece3;
+
+  --va-text-primary: #21140a;
+  --va-text-secondary: #3b200f;
+  --va-text-tertiary: #5a5a5a;
+  --va-text-muted: #6b5c52;
+  --va-text-warm-gray: #7c6c5e;
+  --va-text-inverse: #ffffff;
+
+  --va-accent-primary: #c05840;
+  --va-accent-hover: #a04632;
+  --va-accent-warm: #c4704b;
+
+  --va-success: #4e9b70;
+  --va-success-bg: #ebf5ee;
+  --va-error: #c05840;
+  --va-error-bg: #f9ece9;
+  --va-warning: #c4704b;
+  --va-info: #1f252d;
+
+  --va-border-default: #c8b89a;
+  --va-border-light: #ded2c1;
+  --va-border-lighter: #eadfd5;
+
+  --va-dark-primary: #1f252d;
+  --va-dark-bg: #1f150c;
+
+  --va-radius-sm: 4px;
+  --va-radius-md: 6px;
+  --va-radius-lg: 8px;
+
+  --background: var(--va-bg-primary);
+  --foreground: var(--va-text-primary);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-va-bg-primary: var(--va-bg-primary);
+  --color-va-bg-secondary: var(--va-bg-secondary);
+  --color-va-bg-tertiary: var(--va-bg-tertiary);
+  --color-va-bg-white: var(--va-bg-white);
+  --color-va-surface-sand: var(--va-surface-sand);
+  --color-va-surface-tan: var(--va-surface-tan);
+  --color-va-surface-light-tan: var(--va-surface-light-tan);
+  --color-va-surface-warm: var(--va-surface-warm);
+  --color-va-text-primary: var(--va-text-primary);
+  --color-va-text-secondary: var(--va-text-secondary);
+  --color-va-text-tertiary: var(--va-text-tertiary);
+  --color-va-text-muted: var(--va-text-muted);
+  --color-va-text-warm-gray: var(--va-text-warm-gray);
+  --color-va-text-inverse: var(--va-text-inverse);
+  --color-va-accent-primary: var(--va-accent-primary);
+  --color-va-accent-hover: var(--va-accent-hover);
+  --color-va-accent-warm: var(--va-accent-warm);
+  --color-va-success: var(--va-success);
+  --color-va-success-bg: var(--va-success-bg);
+  --color-va-error: var(--va-error);
+  --color-va-error-bg: var(--va-error-bg);
+  --color-va-warning: var(--va-warning);
+  --color-va-info: var(--va-info);
+  --color-va-border-default: var(--va-border-default);
+  --color-va-border-light: var(--va-border-light);
+  --color-va-border-lighter: var(--va-border-lighter);
+  --color-va-dark-primary: var(--va-dark-primary);
+  --color-va-dark-bg: var(--va-dark-bg);
+  --radius-va-sm: var(--va-radius-sm);
+  --radius-va-md: var(--va-radius-md);
+  --radius-va-lg: var(--va-radius-lg);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
+  --font-display: var(--font-playfair);
+  --font-ui: var(--font-geist);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--va-accent-primary) 24%, transparent);
 }
