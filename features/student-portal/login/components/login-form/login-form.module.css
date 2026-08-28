@@ -1,0 +1,62 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.field {
+  --login-input-icon-size: 20px;
+  --login-input-label-size: 13px;
+  --login-input-placeholder-color: var(--va-text-tertiary);
+}
+
+.options {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  min-width: 0;
+  width: 100%;
+}
+
+.remember {
+  --login-checkbox-size: 16px;
+  --login-checkbox-check-color: var(--va-accent-primary);
+  --login-checkbox-checked-bg: var(--va-bg-white);
+  --login-checkbox-checked-border: var(--va-border-default);
+  --login-checkbox-label-color: var(--va-text-tertiary);
+  --login-checkbox-label-size: 13px;
+  --login-checkbox-label-weight: 400;
+  --login-checkbox-check-size: 10px;
+}
+
+.forgotPassword {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: var(--va-accent-primary);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: normal;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.forgotPassword:focus-visible {
+  border-radius: var(--va-radius-sm);
+  outline: 2px solid var(--va-accent-primary);
+  outline-offset: 3px;
+}
+
+.submit {
+  margin-top: 40px;
+}

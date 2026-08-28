@@ -1,0 +1,89 @@
+.feedback {
+  border-radius: var(--va-radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 20px;
+  width: 100%;
+}
+
+.loading {
+  background: var(--va-bg-white);
+  border: 1px solid var(--va-border-lighter);
+}
+
+.error {
+  background: var(--va-error-bg);
+  border: 1px solid var(--va-error);
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.loading .title {
+  color: var(--va-text-tertiary);
+}
+
+.error .title {
+  color: var(--va-error);
+}
+
+.body {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  min-width: 0;
+  width: 100%;
+}
+
+.icon {
+  background: currentColor;
+  flex: 0 0 auto;
+}
+
+.loading .icon {
+  animation: portal-login-feedback-spin 900ms linear infinite;
+  color: var(--va-error);
+  height: 24px;
+  mask: url("/images/portal/login/spinner-feedback.svg") center / contain no-repeat;
+  -webkit-mask: url("/images/portal/login/spinner-feedback.svg") center / contain no-repeat;
+  width: 24px;
+}
+
+.error .icon {
+  color: var(--va-error);
+  height: 20px;
+  mask: url("/images/portal/login/alert-circle.svg") center / contain no-repeat;
+  -webkit-mask: url("/images/portal/login/alert-circle.svg") center / contain no-repeat;
+  width: 20px;
+}
+
+.message {
+  flex: 1 1 auto;
+  font-size: 14px;
+  line-height: normal;
+  margin: 0;
+  min-width: 0;
+}
+
+.loading .message {
+  color: var(--va-text-tertiary);
+  font-weight: 400;
+}
+
+.error .message {
+  color: var(--va-error);
+  font-weight: 600;
+}
+
+@keyframes portal-login-feedback-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

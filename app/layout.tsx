@@ -20,6 +20,7 @@ const cormorant = Cormorant_Garamond({
   style: ["normal", "italic"],
 });
 
+// icone do projeto
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
@@ -38,8 +39,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VideoAccess",
+  title: "Método REMAR",
   description: "Plataforma para gestão de vídeos, alunos e links de acesso.",
+  icons: {
+    icon: [{ url: "/metodo-remar-icon.svg", type: "image/svg+xml" }],
+    shortcut: "/metodo-remar-icon.svg",
+  },
 };
 
 export default function RootLayout({

@@ -1,0 +1,109 @@
+.field {
+  --login-border-hover: #b8a888;
+  --login-input-icon-size: 18px;
+  --login-input-label-size: 14px;
+  --login-input-label-weight: 600;
+  --login-input-placeholder-color: var(--va-border-default);
+  --login-input-text-color: var(--va-text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  width: 100%;
+}
+
+.label {
+  color: var(--va-text-primary);
+  font-size: var(--login-input-label-size);
+  font-weight: var(--login-input-label-weight);
+  line-height: 16px;
+}
+
+.control {
+  align-items: center;
+  background: var(--va-bg-white);
+  border: 1px solid var(--va-border-default);
+  border-radius: var(--va-radius-lg);
+  display: flex;
+  gap: 12px;
+  height: 48px;
+  min-width: 0;
+  padding-inline: 16px;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease;
+  width: 100%;
+}
+
+.field:not([data-disabled="true"]):not([data-error="true"]) .control:hover {
+  border-color: var(--login-border-hover);
+  box-shadow: inset 0 0 0 0.5px var(--login-border-hover);
+}
+
+.field:not([data-disabled="true"]) .control:focus-within {
+  border-color: var(--va-accent-primary);
+  box-shadow:
+    inset 0 0 0 1px var(--va-accent-primary),
+    0 0 2px rgba(192, 88, 64, 0.2);
+}
+
+.field[data-error="true"] .control {
+  border-color: var(--va-error);
+  box-shadow: inset 0 0 0 0.5px var(--va-error);
+}
+
+.field[data-disabled="true"] .control {
+  background: var(--va-surface-warm);
+  border-color: var(--va-border-lighter);
+  opacity: 0.6;
+}
+
+.icon {
+  background: var(--va-border-default);
+  flex: 0 0 auto;
+  height: var(--login-input-icon-size);
+  mask: url("/images/portal/login/mail.svg") center / contain no-repeat;
+  -webkit-mask: url("/images/portal/login/mail.svg") center / contain no-repeat;
+  transition: background-color 160ms ease;
+  width: var(--login-input-icon-size);
+}
+
+.field[data-filled="true"] .icon,
+.control:has(.input:not(:placeholder-shown)) .icon {
+  background: var(--va-text-primary);
+}
+
+.field:not([data-disabled="true"]) .control:focus-within .icon,
+.field[data-error="true"] .icon {
+  background: var(--va-accent-primary);
+}
+
+.input {
+  background: transparent;
+  border: 0;
+  color: var(--login-input-text-color);
+  flex: 1 1 auto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  min-width: 0;
+  outline: 0;
+  padding: 0;
+}
+
+.input::placeholder {
+  color: var(--login-input-placeholder-color);
+  opacity: 1;
+}
+
+.input:not(:placeholder-shown),
+.field[data-filled="true"] .input {
+  font-weight: 500;
+}
+
+.input:disabled {
+  color: var(--va-border-default);
+  cursor: not-allowed;
+}

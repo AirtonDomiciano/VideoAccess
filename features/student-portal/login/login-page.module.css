@@ -1,0 +1,266 @@
+.page {
+  align-items: center;
+  background: var(--va-border-lighter);
+  color: var(--va-text-primary);
+  display: flex;
+  justify-content: center;
+  min-height: 100svh;
+  padding-block: 20px;
+  width: 100%;
+}
+
+.shell {
+  background: var(--va-bg-primary);
+  border-radius: 24px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  margin-inline: auto;
+  max-width: 1440px;
+  min-height: calc(100svh - 40px);
+  overflow: hidden;
+  width: 100%;
+}
+
+.visualPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  overflow: hidden;
+  padding: 64px;
+  position: relative;
+}
+
+.visualImage {
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.visualOverlay {
+  background: rgba(33, 20, 10, 0.75);
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.visualBrand,
+.visualCopy,
+.mentor {
+  position: relative;
+  z-index: 2;
+}
+
+.visualBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.brandName {
+  color: var(--va-text-inverse);
+  font-family: var(--font-cormorant), serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.brandRole {
+  color: var(--va-surface-sand);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.visualCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.eyebrow {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--va-surface-sand);
+  border-radius: 100px;
+  color: var(--va-text-inverse);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  padding: 6px 12px;
+  text-transform: uppercase;
+}
+
+.visualTitle {
+  color: var(--va-text-inverse);
+  font-family: var(--font-cormorant), serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+  max-width: 592px;
+}
+
+.visualText {
+  color: var(--va-border-lighter);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 592px;
+}
+
+.mentor {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  min-width: 0;
+}
+
+.mentorAvatar {
+  border-radius: 999px;
+  flex: 0 0 auto;
+  object-fit: cover;
+}
+
+.mentorText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.mentorName,
+.mentorRole {
+  line-height: normal;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.mentorName {
+  color: var(--va-text-inverse);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.mentorRole {
+  color: var(--va-surface-sand);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.formPanel {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+  padding: 64px;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 420px;
+  min-width: 0;
+  width: 100%;
+}
+
+.formHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.portalLabel {
+  align-items: center;
+  color: var(--va-accent-primary);
+  display: flex;
+  gap: 8px;
+}
+
+.portalIcon {
+  height: 24px;
+  width: 24px;
+}
+
+.portalLabelText {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.headingGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  color: var(--va-text-primary);
+  font-family: var(--font-cormorant), serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--va-text-tertiary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.benefits {
+  border-top: 1px solid var(--va-border-lighter);
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  min-width: 0;
+  padding: 24px 0 0;
+  width: 100%;
+}
+
+.benefit {
+  align-items: center;
+  color: var(--va-text-tertiary);
+  display: flex;
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 400;
+  gap: 8px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.benefit::before {
+  background: var(--va-accent-primary);
+  content: "";
+  flex: 0 0 auto;
+  height: 16px;
+  mask: url("/images/portal/login/desktop-check.svg") center / contain no-repeat;
+  -webkit-mask: url("/images/portal/login/desktop-check.svg") center / contain no-repeat;
+  width: 16px;
+}
+
+.copyright {
+  color: var(--va-text-tertiary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}

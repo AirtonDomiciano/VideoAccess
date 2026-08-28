@@ -1,0 +1,38 @@
+.fieldError {
+  color: var(--va-error);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+}
+
+.formError {
+  align-items: center;
+  background: var(--va-bg-white);
+  border: 1px solid var(--va-border-lighter);
+  border-radius: var(--va-radius-md);
+  display: flex;
+  gap: 8px;
+  min-width: 0;
+  padding: 12px;
+  width: 100%;
+}
+
+.formErrorIcon {
+  background: var(--va-error);
+  flex: 0 0 auto;
+  height: 16px;
+  mask: url("/images/portal/login/alert-triangle.svg") center / contain no-repeat;
+  -webkit-mask: url("/images/portal/login/alert-triangle.svg") center / contain no-repeat;
+  width: 16px;
+}
+
+.formErrorText {
+  color: var(--va-text-primary);
+  flex: 1 1 auto;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+  min-width: 0;
+}

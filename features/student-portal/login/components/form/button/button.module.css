@@ -1,0 +1,86 @@
+.button {
+  --login-button-height: 48px;
+  --login-button-font-size: 13px;
+  align-items: center;
+  appearance: none;
+  background: var(--va-accent-primary);
+  border: 0;
+  border-radius: var(--va-radius-lg);
+  color: var(--va-text-inverse);
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  height: var(--login-button-height);
+  justify-content: center;
+  min-width: 0;
+  padding: 14px 24px;
+  transition:
+    background-color 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease;
+  white-space: nowrap;
+}
+
+.large {
+  --login-button-height: 52px;
+  --login-button-font-size: 14px;
+}
+
+.elevated {
+  box-shadow: 0 4px 6px rgba(192, 88, 64, 0.2);
+}
+
+.button:hover:not(:disabled) {
+  background: var(--va-accent-hover);
+  box-shadow: 0 4px 4px rgba(33, 20, 10, 0.1);
+}
+
+.button:active:not(:disabled) {
+  background: #8a3a28;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--va-text-primary);
+  outline-offset: 3px;
+}
+
+.button:disabled {
+  background: var(--va-surface-tan);
+  color: #998073;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.button[aria-busy="true"] {
+  background: var(--va-accent-primary);
+  color: var(--va-text-inverse);
+  opacity: 1;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.label {
+  font-size: var(--login-button-font-size);
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.spinner {
+  animation: portal-login-spin 900ms linear infinite;
+  background: currentColor;
+  flex: 0 0 auto;
+  height: 16px;
+  mask: url("/images/portal/login/spinner-button.svg") center / contain no-repeat;
+  -webkit-mask: url("/images/portal/login/spinner-button.svg") center / contain no-repeat;
+  width: 16px;
+}
+
+@keyframes portal-login-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
