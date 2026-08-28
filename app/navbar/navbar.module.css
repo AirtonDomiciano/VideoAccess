@@ -1,0 +1,144 @@
+.header {
+  position: relative;
+  z-index: 20;
+  flex: 0 0 auto;
+  width: 100%;
+  border-bottom: 1px solid var(--va-border-light);
+  background: var(--va-bg-primary);
+}
+
+.inner {
+  display: flex;
+  width: 100%;
+  height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 20px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: inherit;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.logoName {
+  font-family: var(--font-playfair), serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--va-dark-primary);
+  transition: color 160ms ease;
+}
+
+.logo:hover .logoName {
+  color: var(--va-accent-primary);
+}
+
+.logoSubtitle {
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: var(--va-text-tertiary);
+}
+
+.nav,
+.portalLink {
+  display: none;
+}
+
+.menuButton {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--va-dark-primary);
+  cursor: pointer;
+}
+
+.menuIcon {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+@media (min-width: 1024px) {
+  .header {
+    background: linear-gradient(
+      90deg,
+      rgba(249, 244, 236, 0.95) 0%,
+      rgba(249, 244, 236, 0.85) 70%,
+      rgba(249, 244, 236, 0.6) 100%
+    );
+  }
+
+  .inner {
+    max-width: 1440px;
+    height: 120px;
+    margin-inline: auto;
+    padding-inline: clamp(72px, 5.6vw, 80px);
+  }
+
+  .logoName {
+    font-size: 20px;
+    letter-spacing: 9.6px;
+  }
+
+  .logoSubtitle {
+    letter-spacing: 3.2px;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #202428;
+    white-space: nowrap;
+  }
+
+  .navLink {
+    color: inherit;
+    text-decoration: none;
+    transition: color 160ms ease;
+  }
+
+  .navLink:hover {
+    color: var(--va-accent-primary);
+  }
+
+  .portalLink {
+    display: inline-flex;
+    min-height: 45px;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    border: 1px solid var(--va-accent-hover);
+    border-radius: var(--va-radius-md);
+    background: var(--va-accent-primary);
+    color: var(--va-text-inverse);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    transition: background-color 160ms ease;
+  }
+
+  .portalLink:hover {
+    background: var(--va-accent-hover);
+  }
+
+  .menuButton {
+    display: none;
+  }
+}

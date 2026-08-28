@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "skills": {
+    "frontend-design-system": {
+      "source": "o0o0o0admin/SKILLS-REPO_supercent-io-skills-template",
+      "sourceType": "github",
+      "skillPath": ".agent-skills/design-system/SKILL.md",
+      "computedHash": "5c20c46162ec89c01473e55f66d9b79f5c8f0ec38d8b3d5386a0c47634ff239e"
+    },
+    "next-best-practices": {
+      "source": "vercel-labs/openreview",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/next-best-practices/SKILL.md",
+      "computedHash": "db85045827ebeb83ac8dbc992b69188755eeb74dcf01cbf5e694d58aa494a106"
+    },
+    "responsive-design": {
+      "source": "o0o0o0admin/SKILLS-REPO_supercent-io-skills-template",
+      "sourceType": "github",
+      "skillPath": ".agent-skills/responsive-design/SKILL.md",
+      "computedHash": "70fd110bcdb0fb7ad9619d792d5cd60d375cc5f9490c95c2f7446135a1831e6d"
+    },
+    "ui-component-patterns": {
+      "source": "o0o0o0admin/SKILLS-REPO_supercent-io-skills-template",
+      "sourceType": "github",
+      "skillPath": ".agent-skills/ui-component-patterns/SKILL.md",
+      "computedHash": "0fb9b38c49cd066f851d12c078db38cc10d98d08d2f1bbe400ff08798e5b3e4d"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "computedHash": "ca7b0c0c6e5f2750043f7f0cd72d16ac4e2abc48f9b5500d047a4b77a2506212"
+    },
+    "web-accessibility": {
+      "source": "o0o0o0admin/SKILLS-REPO_supercent-io-skills-template",
+      "sourceType": "github",
+      "skillPath": ".agent-skills/web-accessibility/SKILL.md",
+      "computedHash": "44d192022e830fb048770335351cc34cf5a52d360a7bd1253a9d9f510e4f1d3a"
+    }
+  }
+}
