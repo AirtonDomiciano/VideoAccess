@@ -79,17 +79,6 @@ export function TextField({ className, error, ...props }: TextFieldProps) {
   );
 }
 
-export function SearchField(props: TextFieldProps) {
-  const { className, ...inputProps } = props;
-
-  return (
-    <div className="relative w-full">
-      <span className="pointer-events-none absolute left-3 top-1/2 size-2.5 -translate-y-1/2 rounded-full border-2 border-va-text-warm-gray" />
-      <TextField {...inputProps} className={cx("h-10 pl-9", className)} />
-    </div>
-  );
-}
-
 type BadgeStatus =
   | "not-started"
   | "in-progress"

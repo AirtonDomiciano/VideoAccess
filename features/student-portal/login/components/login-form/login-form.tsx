@@ -1,76 +1,108 @@
 "use client";
 
 import { useState, type ChangeEvent, type FormEvent } from "react";
-import { Button, Checkbox, PasswordInput, TextInput } from "../form";
+import { useRouter } from "next/navigation";
+
+import { signInToStudentPortal } from "@/features/student-portal/auth/application/actions";
+
+import {
+  Button,
+  Checkbox,
+  GlobalFormFeedback,
+  PasswordInput,
+  TextInput,
+} from "@/components/design-system";
 import styles from "./login-form.module.css";
 
 type LoginFormErrors = {
-  email?: string;
   password?: string;
+  username?: string;
 };
 
 export function LoginForm() {
-  const [email, setEmail] = useState("");
+  const router = useRouter();
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(true);
   const [errors, setErrors] = useState<LoginFormErrors>({});
+  const [formFeedback, setFormFeedback] = useState<string>();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function handleEmailChange(event: ChangeEvent<HTMLInputElement>) {
-    setEmail(event.target.value);
-    setErrors((current) => ({ ...current, email: undefined }));
+  function handleUsernameChange(event: ChangeEvent<HTMLInputElement>) {
+    setUsername(event.target.value);
+    setErrors((current) => ({ ...current, username: undefined }));
+    setFormFeedback(undefined);
   }
 
   function handlePasswordChange(event: ChangeEvent<HTMLInputElement>) {
     setPassword(event.target.value);
     setErrors((current) => ({ ...current, password: undefined }));
+    setFormFeedback(undefined);
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const nextErrors: LoginFormErrors = {};
-    const normalizedEmail = email.trim();
+    if (isSubmitting) {
+      return;
+    }
 
-    if (!normalizedEmail) {
-      nextErrors.email = "Este campo é obrigatório.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
-      nextErrors.email = "Por favor, insira um endereço de e-mail válido.";
+    const nextErrors: LoginFormErrors = {};
+    const normalizedUsername = username.trim();
+
+    if (!normalizedUsername) {
+      nextErrors.username = "Este campo é obrigatório.";
     }
 
     if (!password) {
       nextErrors.password = "Este campo é obrigatório.";
     }
 
-    if (nextErrors.email || nextErrors.password) {
+    if (nextErrors.username || nextErrors.password) {
       setErrors(nextErrors);
+      setFormFeedback(undefined);
       return;
     }
 
     setIsSubmitting(true);
+    setFormFeedback(undefined);
 
-    // TODO: integrar autenticação do Portal do Aluno
-    window.setTimeout(() => {
+    try {
+      const result = await signInToStudentPortal({
+        password,
+        username: normalizedUsername,
+      });
+
+      if (result.status === "authenticated") {
+        router.replace("/portal");
+        router.refresh();
+        return;
+      }
+
+      setFormFeedback("E-mail ou senha incorretos.");
       setIsSubmitting(false);
-    }, 600);
+    } catch {
+      setFormFeedback("E-mail ou senha incorretos.");
+      setIsSubmitting(false);
+    }
   }
 
   return (
     <form className={styles.form} noValidate onSubmit={handleSubmit}>
       <div className={styles.fields}>
         <TextInput
-          autoComplete="email"
+          autoComplete="username"
           className={styles.field}
           disabled={isSubmitting}
-          error={errors.email}
+          error={errors.username}
           id="student-portal-email"
           label="E-mail de acesso"
-          name="email"
-          onChange={handleEmailChange}
+          name="username"
+          onChange={handleUsernameChange}
           placeholder="exemplo@email.com"
           required
-          type="email"
-          value={email}
+          type="text"
+          value={username}
         />
 
         <PasswordInput
@@ -87,6 +119,12 @@ export function LoginForm() {
           value={password}
         />
       </div>
+
+      {formFeedback ? (
+        <GlobalFormFeedback className={styles.feedback} variant="error">
+          {formFeedback}
+        </GlobalFormFeedback>
+      ) : null}
 
       <div className={styles.options}>
         <Checkbox

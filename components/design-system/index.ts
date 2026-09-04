@@ -1,4 +1,14 @@
+export { Avatar } from "./avatar";
+export { Badge } from "./badge";
+export * from "./button";
+export * from "./checkbox";
+export * from "./form-error";
+export * from "./global-form-feedback";
+export { Input, TextInput } from "./input";
+export * from "./password-input";
 export * from "./portal";
 export * from "./primitives";
+export { ProgressBar } from "./progress";
+export { Search, SearchField, type SearchProps } from "./search";
 export * from "./tokens";
 export * from "./web";

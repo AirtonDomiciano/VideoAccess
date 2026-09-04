@@ -18,6 +18,10 @@
   --login-input-placeholder-color: var(--va-text-tertiary);
 }
 
+.feedback {
+  margin-top: 20px;
+}
+
 .options {
   align-items: center;
   display: flex;
